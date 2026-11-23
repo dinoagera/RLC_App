@@ -1,0 +1,6 @@
+{
+  "name": "RLCLab.PlayTests",
+  "rootNamespace": "RLCLab.Tests",
+  "references": ["RLCLab.Core", "RLCLab.Runtime", "Unity.ugui", "Unity.TextMeshPro"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

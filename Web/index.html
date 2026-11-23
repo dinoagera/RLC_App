@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Интерактивная лаборатория последовательной RLC-цепи: временные графики, фазовая диаграмма и резонанс.">
+  <title>RLC Lab — лаборатория переменного тока</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1220'/%3E%3Cpath d='M8 32Q20 4 32 32T56 32' fill='none' stroke='%2348dcc8' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="RLC Lab — главная"><span class="brand-icon">∿</span> RLC<span class="brand-light">/ LAB</span></a>
+    <div class="heading"><h1>Лаборатория переменного тока</h1><p>ВИРТУАЛЬНЫЙ ЭКСПЕРИМЕНТ <span>№ 32</span></p></div>
+    <div id="resonance" class="resonance" role="status"><span class="dot"></span><span id="resonance-text"></span></div>
+    <button class="button subtle" id="help-open"><span class="question-icon">?</span> Справка</button>
+  </header>
+  <main class="workspace">
+    <aside class="panel parameters" aria-labelledby="parameters-title">
+      <div class="section-eyebrow">ПУЛЬТ УПРАВЛЕНИЯ</div>
+      <h2 id="parameters-title">Параметры цепи</h2>
+      <p class="muted description">Изменяйте значения и наблюдайте результат</p>
+      <div id="parameter-fields"></div>
+      <p id="feedback" role="status">Настройки сохраняются автоматически</p>
+      <button id="tune" class="button primary tune"><span>◎</span> Настроить резонанс <span class="button-formula">f = f₀</span></button>
+      <div class="preset-section"><div class="section-eyebrow">ГОТОВЫЕ ЭКСПЕРИМЕНТЫ</div>
+        <div class="preset-buttons"><button class="button subtle" id="preset-c">Ток опережает <span>↗</span></button><button class="button subtle" id="preset-l">Ток отстаёт <span>↘</span></button></div>
+      </div>
+      <div class="model-note"><span>i</span><p>Последовательная RLC-цепь.<br>Установившийся синусоидальный режим.</p></div>
+    </aside>
+    <section class="laboratory" aria-label="Область эксперимента">
+      <section class="panel circuit-panel" aria-labelledby="circuit-title">
+        <div class="panel-heading"><h2 id="circuit-title"><span class="section-number">01</span> Схема цепи</h2><span class="small-tag">ПОСЛЕДОВАТЕЛЬНОЕ СОЕДИНЕНИЕ</span></div>
+        <svg id="circuit" viewBox="0 0 1060 170" role="img" aria-labelledby="circuit-desc">
+          <title id="circuit-desc">Последовательно соединённые источник переменного напряжения, резистор, катушка и конденсатор</title>
+          <defs><filter id="glow"><feGaussianBlur stdDeviation="3"/></filter></defs>
+          <g class="wire" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M100 66V32H271 M369 32H540 M660 32H902V73 M902 97V140H100V114"/>
+            <rect x="271" y="18" width="98" height="28" class="resistor"/>
+            <path d="M540 32a15 19 0 0 1 30 0a15 19 0 0 1 30 0a15 19 0 0 1 30 0a15 19 0 0 1 30 0" class="inductor"/>
+            <path d="M875 73H929 M875 97H929" class="capacitor"/>
+            <circle cx="100" cy="90" r="24" class="source"/>
+            <path d="M84 90q8-17 16 0t16 0" class="source"/>
+          </g>
+          <g class="node"><circle cx="200" cy="32" r="3"/><circle cx="450" cy="32" r="3"/><circle cx="760" cy="32" r="3"/><circle cx="760" cy="140" r="3"/></g>
+          <g class="schematic-label"><text x="320" y="82" text-anchor="middle" id="scheme-R"></text><text x="600" y="82" text-anchor="middle" id="scheme-L" class="inductor-text"></text>
+            <text x="950" y="81" id="scheme-C" class="capacitor-text">C</text><text x="950" y="106" id="scheme-C-value" class="value-small"></text>
+            <text x="51" y="85" text-anchor="end" class="voltage-text">AC</text><text x="51" y="110" text-anchor="end" id="scheme-U" class="value-small"></text>
+            <text x="100" y="165" text-anchor="middle" id="scheme-f" class="value-small"></text>
+          </g>
+          <path id="flow-arrow" d="M485 140h62m-9-5 9 5-9 5" fill="none" stroke="#48dcc8" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="560" y="146" class="flow-text">i(t)</text>
+        </svg>
+      </section>
+      <section class="panel results-panel" aria-label="Результаты расчёта">
+        <div class="results-grid">
+          <div class="result"><span class="result-label">Импеданс |Z|</span><div><output id="result-z">—</output><span class="unit">Ом</span></div></div>
+          <div class="result current"><span class="result-label">Амплитуда Iₘ</span><div><output id="result-im">—</output><span class="unit">А</span></div></div>
+          <div class="result"><span class="result-label">Фазовый сдвиг φ</span><div><output id="result-phi">—</output><span class="unit">°</span></div></div>
+          <div class="result voltage"><span class="result-label">Резонанс f₀</span><div><output id="result-f0">—</output><span class="unit">Гц</span></div></div>
+          <div class="result"><span class="result-label">Индуктивное Xₗ</span><div><output id="result-xl">—</output><span class="unit">Ом</span></div></div>
+          <div class="result"><span class="result-label">Ёмкостное X<sub>C</sub></span><div><output id="result-xc">—</output><span class="unit">Ом</span></div></div>
+        </div>
+        <div class="secondary-results" id="secondary-results"></div>
+      </section>
+      <section class="panel graph-panel" aria-labelledby="graph-title">
+        <div class="graph-toolbar"><div role="tablist" aria-label="Режим графиков" class="tabs">
+          <button role="tab" aria-selected="true" aria-controls="plot-area" id="tab-time" data-mode="time"><span>∿</span> Временные сигналы</button>
+          <button role="tab" aria-selected="false" aria-controls="plot-area" id="tab-phasor" data-mode="phasor"><span>↗</span> Фазовая диаграмма</button>
+          <button role="tab" aria-selected="false" aria-controls="plot-area" id="tab-frequency" data-mode="frequency"><span>⌁</span> Частотный отклик</button>
+        </div><button id="normalize" class="normalize" aria-pressed="true"><span class="switch"><i></i></span> Нормализация</button></div>
+        <h2 class="sr-only" id="graph-title">Временные сигналы</h2>
+        <div class="graph-meta"><div id="legend" class="legend"></div><span id="graph-info" class="graph-info"></span></div>
+        <div id="plot-area" role="tabpanel" aria-labelledby="tab-time" class="plot-area" tabindex="0">
+          <canvas id="graph" aria-label="График напряжения и тока">Для отображения графика нужен браузер с поддержкой Canvas.</canvas>
+          <div id="plot-tooltip" hidden></div>
+        </div>
+        <div class="graph-bottom"><span id="graph-note"></span><button id="export" title="Сохранить частотные характеристики в CSV">↓ Экспорт CSV</button></div>
+      </section>
+    </section>
+  </main>
+  <footer class="playback-bar">
+    <div class="playback-buttons"><button class="button primary" id="start">▶ <span>Старт</span></button><button class="button subtle" id="pause">Ⅱ <span>Пауза</span></button><button class="button subtle" id="reset">↺ <span>Сброс</span></button></div>
+    <div class="speed-control"><label for="speed">Скорость <output id="speed-value">1,0×</output></label><input id="speed" type="range" min="0.1" max="4" step="0.1" value="1" aria-label="Скорость анимации"></div>
+    <div class="playback-status"><p id="playback-status"></p><span>Пробел — старт / пауза <b>·</b> R — сброс <b>·</b> 1 / 2 / 3 — режим</span></div>
+    <span class="footer-brand">RLC LAB <span>1.0</span></span>
+  </footer>
+  <dialog id="help">
+    <div class="help-heading"><div><div class="section-eyebrow">КРАТКОЕ РУКОВОДСТВО</div><h2>Ваш первый эксперимент</h2></div><button id="help-close" class="button subtle" aria-label="Закрыть справку">✕</button></div>
+    <div class="help-content">
+      <p>Изменяйте параметры ползунками или вводите числа. <strong>Enter</strong> применяет ввод, точка и запятая равнозначны. Значения вне диапазона не принимаются. Настройки сохраняются в этом браузере.</p>
+      <h3>01 / Что мы рассчитываем</h3>
+      <p><strong>Xₗ = ωL</strong> — сопротивление катушки, <strong>X<sub>C</sub> = 1/(ωC)</strong> — сопротивление конденсатора. Здесь ω = 2πf, L переводится в генри, C — в фарады.</p>
+      <p><strong>|Z| = √(R² + (Xₗ − X<sub>C</sub>)²)</strong> — модуль полного сопротивления. <strong>Iₘ = Uₘ/|Z|</strong> — амплитуда тока. Uₘ и Iₘ — пиковые величины; действующие значения равны амплитуде, делённой на √2. Активная мощность P = Iₘ²R/2.</p>
+      <h3>02 / Почему сигналы сдвинуты</h3>
+      <p><strong>φ = atan2(Xₗ − X<sub>C</sub>, R)</strong>. Если φ &gt; 0, ток <strong>отстаёт</strong>; если φ &lt; 0 — <strong>опережает</strong>. Сигналы: u(t) = Uₘ sin(ωt), i(t) = Iₘ sin(ωt − φ).</p>
+      <p>Нормализация делит каждый сигнал на его амплитуду: так проще увидеть фазовый сдвиг. Без неё используется общая числовая шкала: напряжение — в В, ток — в А. Наведите курсор на график, чтобы узнать точные значения.</p>
+      <h3>03 / Фазовая диаграмма</h3>
+      <p>Ток направлен вправо и принят за фазу 0°. Uᵣ совпадает с током, Uₗ направлено вверх, U<sub>C</sub> — вниз. Полное напряжение <strong>U = Uᵣ + Uₗ + U<sub>C</sub></strong>. Все напряжения имеют общий масштаб; ток показан отдельно на опорной оси, в амперах.</p>
+      <h3>04 / Поймайте резонанс</h3>
+      <p><strong>f₀ = 1/(2π√LC)</strong>. При резонансе Xₗ = X<sub>C</sub>, Z = R, Iₘ достигает Uₘ/R, а φ = 0. Индикатор «Область резонанса» включается при |f − f₀|/f₀ ≤ 0,02.</p>
+      <p>Кнопка <strong>«Настроить резонанс»</strong> устанавливает неокруглённое f₀. Если оно вне диапазона 1–1000 Гц, измените L или C. Частотный отклик использует логарифмическую ось f и раздельные шкалы Iₘ и Z. Золотой пунктир — f₀; серая линия — текущая частота. Щёлкните по графику, чтобы изменить f.</p>
+      <h3>05 / Управление</h3>
+      <p><strong>Старт / Пауза</strong> влияют только на анимацию; расчёты всегда обновляются. Скорость изменяет замедленную развёртку (0,35 периода в секунду при 1×), <strong>не физическую частоту</strong>. В окне видны 3 периода. После возвращения на вкладку браузера скрытое время не прокручивается.</p>
+      <p><strong>Сброс:</strong> R = 100 Ом, L = 100 мГн, C = 100 мкФ, f = 50 Гц, Uₘ = 10 В, скорость 1×. Клавиши: Пробел — анимация, R — сброс, 1/2/3 — графики, F1 — справка, Esc — закрыть справку.</p>
+      <div class="help-callout">Модель описывает только последовательную линейную RLC-цепь в установившемся синусоидальном режиме. Переходные процессы, параллельные цепи и произвольная сборка схем не входят в ТЗ.</div>
+    </div>
+    <button id="help-done" class="button primary">Понятно, к эксперименту →</button>
+  </dialog>
+  <noscript><div class="noscript">Для лаборатории необходимо включить JavaScript.</div></noscript>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>

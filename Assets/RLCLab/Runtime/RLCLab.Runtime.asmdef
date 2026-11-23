@@ -1,0 +1,5 @@
+{
+  "name": "RLCLab.Runtime",
+  "rootNamespace": "RLCLab",
+  "references": ["RLCLab.Core", "Unity.ugui", "Unity.TextMeshPro"]
+}

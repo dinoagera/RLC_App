@@ -1,0 +1,5 @@
+{
+  "name": "RLCLab.Core",
+  "rootNamespace": "RLCLab.Core",
+  "noEngineReferences": true
+}

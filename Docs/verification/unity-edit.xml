@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="15" result="Passed" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.0554547">
+  <test-suite type="TestSuite" id="1000" name="RLC Lab" fullname="RLC Lab" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.055455" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1019" name="RLCLab.Tests.dll" fullname="/home/dinoagera/Documents/Projects/ProjectMultimedia/Library/ScriptAssemblies/RLCLab.Tests.dll" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.046946" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="35027" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1020" name="RLCLab" fullname="RLCLab" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.046378" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1021" name="Tests" fullname="RLCLab.Tests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.046170" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="CircuitTests" fullname="RLCLab.Tests.CircuitTests" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.045406" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1016" name="EveryExtremeCombination" fullname="RLCLab.Tests.CircuitTests.EveryExtremeCombination" methodname="EveryExtremeCombination" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="368776003" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.012665" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="ExactResonance" fullname="RLCLab.Tests.CircuitTests.ExactResonance" methodname="ExactResonance" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1139360708" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.003889" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1018" name="HighQPeakIsNotMissed" fullname="RLCLab.Tests.CircuitTests.HighQPeakIsNotMissed" methodname="HighQPeakIsNotMissed" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="849234533" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.004329" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1015" name="InputFormat" fullname="RLCLab.Tests.CircuitTests.InputFormat" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.006854" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1009" name="InputFormat(&quot;1,5&quot;,True)" fullname="RLCLab.Tests.CircuitTests.InputFormat(&quot;1,5&quot;,True)" methodname="InputFormat" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1009381926" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.003688" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1010" name="InputFormat(&quot;1.5&quot;,True)" fullname="RLCLab.Tests.CircuitTests.InputFormat(&quot;1.5&quot;,True)" methodname="InputFormat" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1506879235" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.000173" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="InputFormat(&quot;NaN&quot;,False)" fullname="RLCLab.Tests.CircuitTests.InputFormat(&quot;NaN&quot;,False)" methodname="InputFormat" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1185316962" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.000377" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="InputFormat(&quot;Infinity&quot;,False)" fullname="RLCLab.Tests.CircuitTests.InputFormat(&quot;Infinity&quot;,False)" methodname="InputFormat" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1584847221" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.000110" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="InputFormat(&quot;&quot;,False)" fullname="RLCLab.Tests.CircuitTests.InputFormat(&quot;&quot;,False)" methodname="InputFormat" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="504342394" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.000110" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1014" name="InputFormat(&quot;abc&quot;,False)" fullname="RLCLab.Tests.CircuitTests.InputFormat(&quot;abc&quot;,False)" methodname="InputFormat" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1257779998" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.000061" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1017" name="InvalidModelIsRejected" fullname="RLCLab.Tests.CircuitTests.InvalidModelIsRejected" methodname="InvalidModelIsRejected" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1002523233" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.001541" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1008" name="ResonanceBoundaries" fullname="RLCLab.Tests.CircuitTests.ResonanceBoundaries" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.003666" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1004" name="ResonanceBoundaries(0.98d,True)" fullname="RLCLab.Tests.CircuitTests.ResonanceBoundaries(0.98d,True)" methodname="ResonanceBoundaries" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1044914162" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.002660" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1005" name="ResonanceBoundaries(1.02d,True)" fullname="RLCLab.Tests.CircuitTests.ResonanceBoundaries(1.02d,True)" methodname="ResonanceBoundaries" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1011650736" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.000127" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1006" name="ResonanceBoundaries(1.02001d,False)" fullname="RLCLab.Tests.CircuitTests.ResonanceBoundaries(1.02001d,False)" methodname="ResonanceBoundaries" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="406765677" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.000061" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1007" name="ResonanceBoundaries(0.97999d,False)" fullname="RLCLab.Tests.CircuitTests.ResonanceBoundaries(0.97999d,False)" methodname="ResonanceBoundaries" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1177633377" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.000055" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1002" name="SpecificationControlExample" fullname="RLCLab.Tests.CircuitTests.SpecificationControlExample" methodname="SpecificationControlExample" classname="RLCLab.Tests.CircuitTests" runstate="Runnable" seed="1043853309" result="Passed" start-time="2026-11-23 08:21:57Z" end-time="2026-11-23 08:21:57Z" duration="0.000308" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /home/dinoagera/Documents/Projects/ProjectMultimedia/TestResults/unity-edit.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

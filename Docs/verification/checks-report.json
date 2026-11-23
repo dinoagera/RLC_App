@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-11-23T08:39:24.018393+00:00",
+  "scope": "non-unity-regression-checks",
+  "passed": true,
+  "unityEditorTestsExecuted": false,
+  "windowsBuildExecuted": false,
+  "checks": [
+    {
+      "command": [
+        "dotnet",
+        "run",
+        "--project",
+        "tools/MathTests/MathTests.csproj",
+        "-c",
+        "Release"
+      ],
+      "exitCode": 0,
+      "output": "PASS: 19952 checks (control example, 32 corners, 1500 random circuits, resonance, validation, signals).\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "Web/tests/math.test.mjs"
+      ],
+      "exitCode": 0,
+      "output": "TAP version 13\n# Subtest: Контрольный пример ТЗ\nok 1 - Контрольный пример ТЗ\n  ---\n  duration_ms: 4.919657\n  type: 'test'\n  ...\n# Subtest: Точный резонанс и знаки фаз\nok 2 - Точный резонанс и знаки фаз\n  ---\n  duration_ms: 0.790651\n  type: 'test'\n  ...\n# Subtest: Границы резонансной области ±2%\nok 3 - Границы резонансной области ±2%\n  ---\n  duration_ms: 0.679627\n  type: 'test'\n  ...\n# Subtest: Валидация чисел и диапазонов\nok 4 - Валидация чисел и диапазонов\n  ---\n  duration_ms: 2.280524\n  type: 'test'\n  ...\n# Subtest: Все 32 сочетания крайних значений\nok 5 - Все 32 сочетания крайних значений\n  ---\n  duration_ms: 2.377902\n  type: 'test'\n  ...\n# Subtest: Узкий резонанс включён в сетку частот\nok 6 - Узкий резонанс включён в сетку частот\n  ---\n  duration_ms: 12.943618\n  type: 'test'\n  ...\n# Subtest: JavaScript совпадает с C\\# на 96 контрольных цепях\nok 7 - JavaScript совпадает с C\\# на 96 контрольных цепях\n  ---\n  duration_ms: 5.926504\n  type: 'test'\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 7\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 418.605057\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/verify-project.py"
+      ],
+      "exitCode": 0,
+      "output": "PASS: 74 unique asset GUIDs, 98 references; manifests and scene present.\n"
+    }
+  ]
+}

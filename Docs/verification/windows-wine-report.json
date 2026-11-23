@@ -1,0 +1,14 @@
+{
+  "timestampUtc": "2026-11-23T08:40:09.569612+00:00",
+  "passed": true,
+  "environment": "Linux, isolated Wine prefix, Direct3D 11",
+  "nativeWindowsTested": false,
+  "runningSeconds": 15,
+  "windowSize": [
+    1330,
+    807
+  ],
+  "screenshot": "windows-wine.png",
+  "csharpExceptionsDetected": false,
+  "note": "Launch/visual smoke only; not a full functional or performance test."
+}

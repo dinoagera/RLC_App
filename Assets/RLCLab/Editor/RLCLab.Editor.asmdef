@@ -1,0 +1,6 @@
+{
+  "name": "RLCLab.Editor",
+  "rootNamespace": "RLCLab.Editor",
+  "references": ["RLCLab.Core", "RLCLab.Runtime"],
+  "includePlatforms": ["Editor"]
+}

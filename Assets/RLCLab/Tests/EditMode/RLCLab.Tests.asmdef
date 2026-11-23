@@ -1,0 +1,7 @@
+{
+  "name": "RLCLab.Tests",
+  "rootNamespace": "RLCLab.Tests",
+  "references": ["RLCLab.Core"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

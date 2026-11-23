@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-23 08:42:58Z" end-time="2026-11-23 08:42:59Z" duration="0.8356181">
+  <test-suite type="TestSuite" id="1008" name="RLC Lab" fullname="RLC Lab" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-23 08:42:58Z" end-time="2026-11-23 08:42:59Z" duration="0.835618" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1004" name="RLCLab.PlayTests.dll" fullname="/home/dinoagera/Documents/Projects/ProjectMultimedia/Library/ScriptAssemblies/RLCLab.PlayTests.dll" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-23 08:42:58Z" end-time="2026-11-23 08:42:59Z" duration="0.827013" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="51701" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1005" name="RLCLab" fullname="RLCLab" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-23 08:42:58Z" end-time="2026-11-23 08:42:59Z" duration="0.826388" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1006" name="Tests" fullname="RLCLab.Tests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-23 08:42:58Z" end-time="2026-11-23 08:42:59Z" duration="0.826114" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="LaboratoryTests" fullname="RLCLab.Tests.LaboratoryTests" classname="RLCLab.Tests.LaboratoryTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-23 08:42:58Z" end-time="2026-11-23 08:42:59Z" duration="0.825023" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1002" name="CompleteLaboratorySmokeTest" fullname="RLCLab.Tests.LaboratoryTests.CompleteLaboratorySmokeTest" methodname="CompleteLaboratorySmokeTest" classname="RLCLab.Tests.LaboratoryTests" runstate="Runnable" seed="243057497" result="Passed" start-time="2026-11-23 08:42:58Z" end-time="2026-11-23 08:42:58Z" duration="0.439623" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="SettingsPersistAndCorruptedValuesRecover" fullname="RLCLab.Tests.LaboratoryTests.SettingsPersistAndCorruptedValuesRecover" methodname="SettingsPersistAndCorruptedValuesRecover" classname="RLCLab.Tests.LaboratoryTests" runstate="Runnable" seed="1067396118" result="Passed" start-time="2026-11-23 08:42:58Z" end-time="2026-11-23 08:42:59Z" duration="0.374767" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /home/dinoagera/Documents/Projects/ProjectMultimedia/TestResults/unity-play.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

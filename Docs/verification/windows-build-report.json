@@ -1,0 +1,11 @@
+{
+    "unityVersion": "6000.0.62f1",
+    "target": "StandaloneWindows64",
+    "result": "Succeeded",
+    "executable": "/home/dinoagera/Documents/Projects/ProjectMultimedia/Builds/Windows/RLC Lab.exe",
+    "timestampUtc": "2026-11-23T08:39:29.5060950Z",
+    "outputBytes": 88433340,
+    "elapsedSeconds": 1.3361024,
+    "warnings": 0,
+    "errors": 0
+}
